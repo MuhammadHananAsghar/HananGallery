@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset Password</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+      }
+      img{
+        height: 250px;
+        width: 250px;
+        object-fit: cover;
+      }
+      .message{
+        padding: 0rem 3rem;
+        text-align: center;
+        font-weight: 500;
+        font-size: 20px;
+      }
+      span{
+        margin-top: 1rem;
+      }
+      span, a{
+        font-weight: 600;
+      }
+      a{
+        text-decoration: none;
+        color: #827ffe;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="{{ url_for('static', filename='images/reset.png') }}" alt="Reset Password" />
+    <span class="message"
+      >We have sent you a email. If could't find any email check your spam
+      also.</span
+    >
+    <span>Back to <a href="/">Login</a> here.</span>
+  </body>
+</html>

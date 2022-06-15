@@ -1,0 +1,85 @@
+:root {
+  --text-color: #403a3a;
+  --title-color: #403866;
+  --field-color: #e6e6e6;
+  --button-color: #827ffe;
+  --button-hover: #403866;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+body {
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff;
+}
+.resetform {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.resetform .resetTitle {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--title-color);
+  text-align: center;
+  margin-top: 10px;
+}
+.resetform .resetemail {
+  margin-top: 2.5rem;
+  width: calc(100% - 50px);
+  height: 65px;
+}
+.resetform .resetemail input {
+  width: 100%;
+  height: 100%;
+  background-color: var(--field-color);
+  border: none;
+  padding: 0rem 1rem;
+  font-size: 18px;
+  font-weight: 600;
+  outline: none;
+  transition: 0.4s all ease-out;
+}
+.resetform .resetemail input:focus {
+  outline: 1px solid var(--button-color);
+}
+.resetform .resetbutton {
+  margin-top: 1.3rem;
+  width: calc(100% - 50px);
+  height: 65px;
+}
+.resetform .resetbutton button {
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: var(--button-color);
+  border: none;
+  cursor: pointer;
+  transition: 0.5s all ease-in;
+}
+.resetform .resetbutton button:hover {
+  background-color: var(--button-hover);
+}
+.resetform .backlogin {
+  margin-top: 10px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+.resetform .backlogin a {
+  text-decoration: none;
+  color: var(--button-color);
+}

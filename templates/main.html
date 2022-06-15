@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hanan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/toastr.min.css') }}">
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <span class="one">H<span class="two">anan</span></span>
+      </div>
+      <div class="sideItems">
+        <div class="button" id="upload">
+          <i class="bx bx-cloud-upload"></i>
+          <span>upload</span>
+        </div>
+        <img src="{{ image }}" onclick="window.location.href = '/profile';" alt="profile">
+      </div>
+    </header>
+    <div class="margin"></div>
+    <div class="searchBar">
+      <input type="text" name="search" id="search" placeholder="Search...">
+      <i class='bx bx-search-alt' ></i>
+    </div>
+    <section class="mainContent">
+      <span class="gallerySpan">Gallery</span>
+      <br><br>
+      {% if images %}
+      <div class="gallery">
+        {% for image_d in images %}
+        <div class="gallery-item" author="{{image_d.name}}">
+          <img src="{{image_d.uimage}}" alt="{{image_d.name}}">
+          <div class="details" style="background-color:#fff;padding: 10px 20px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;position: absolute;left: 0px;bottom: 0px;right: 0px;display: flex;align-items: center;justify-content: center;">
+            <img src="{{image_d.pimage}}" alt="{{image_d.name}}" style="object-fit: cover;width: 40px; height: 40px; border-radius: 50%;">
+            <span style="padding-left: 10px; font-weight: 600; font-size: 14px;">{{image_d.name}}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div style="display:flex;align-items:center;justify-content:center;">
+        <span style="margin-left: 1.5rem;">No images found....</span>
+        <i class='bx bx-refresh' style="color: #827ffe;font-size:30px;cursor:pointer;" onclick="window.location.reload();"></i>
+      </div>
+      {% endif %}
+    </section>
+    <div class="popup" id="popup">
+      <div class="pheader">
+        <span>upload</span>
+        <i class="bx bx-x" id="hidepopup"></i>
+      </div>
+      <div class="pcontent">
+        <div class="uploadcontainer">
+          <input accept="image/*" type="file" id="imgInp" />
+          <div id="uploadIcon">
+            <i class="bx bxs-cloud-upload" id="uploadimage"></i>
+            <span>Upload your image here...</span>
+          </div>
+          <img src="" alt="" id="previewImg" />
+        </div>
+        <div class="pbutton" id="pbutton">Upload Image</div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/toastr.min.js') }}"></script>
+    <script>
+      Loader.open();
+      $(document).ready(function () {
+           Loader.close();
+      });
+    </script>
+  </body>
+</html>
