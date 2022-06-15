@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+<body>
+    <section class="loginform">
+        <span class="loginTitle">Login</span>
+        <div class="email">
+            <input type="email" name="email" id="email" placeholder="Email" autocomplete="off" aria-invalid="false" aria-haspopup="false" spellcheck="false" required>
+        </div>
+        <div class="password">
+            <input type="password" name="password" id="password" placeholder="Password" required>
+        </div>
+
+        <div class="check-container">
+            <label class="container">&nbsp;Remember me
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+            <span>Forgot?</span>
+        </div>
+        <div class="loginbutton">
+            <button>login</button>
+        </div>
+        <span class="dont">Don't have an account? <a href="#">Register here</a></span>
+    </section>
+</body>
+</html>

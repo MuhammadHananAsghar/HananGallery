@@ -1,0 +1,329 @@
+:root {
+  --text-color: #403a3a;
+  --title-color: #403866;
+  --field-color: #e6e6e6;
+  --button-color: #827ffe;
+  --button-hover: #403866;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  height: 100vh;
+  background-color: #ffffff;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.header .logo {
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+.header .logo .one {
+  color: var(--button-color);
+}
+.header .logo .two {
+  color: var(--text-color);
+}
+.sideItems{
+    display: flex;
+}
+.sideItems img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 1.2rem;
+}
+.header .button {
+  background-color: var(--button-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.5s all ease-in;
+  border-radius: 5px;
+}
+.header .button:hover {
+  background-color: var(--button-hover);
+}
+.header .button span {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.header .button i {
+  font-size: 35px;
+  padding-right: 8px;
+}
+.popup {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  transform: scale(0);
+  background-color: #ffffff;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.1), 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+.popupshow {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  background-color: #ffffff;
+  z-index: 10000;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+  box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.1), 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+.pheader {
+  padding: 0rem 1rem;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pheader span {
+  color: var(--text-color);
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.pheader i {
+  color: var(--text-color);
+  font-size: 35px;
+  cursor: pointer;
+}
+.pcontent {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.uploadcontainer {
+  height: 300px;
+  width: 300px;
+  border: 2px dashed var(--button-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+#imgInp {
+  display: none;
+}
+#uploadIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#previewImg {
+  display: none;
+  cursor: pointer;
+}
+.pcontent .uploadcontainer i {
+  font-size: 150px;
+  color: var(--button-color);
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+
+.pcontent .uploadcontainer img {
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+.pcontent .uploadcontainer i:hover {
+  color: var(--button-hover);
+}
+.pcontent .uploadcontainer span {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.pbutton {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1.3rem 0rem;
+  background-color: var(--button-color);
+  font-weight: 600;
+  font-size: 25px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.pbutton:hover {
+  background-color: var(--button-hover);
+}
+.margin {
+  margin-top: 2rem;
+}
+.searchBar {
+  height: 45px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: calc(100% - 50px);
+  border-radius: 25px;
+  box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.1), 0px 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 0rem 1rem 0rem 0rem;
+}
+.searchBar input {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 0rem 0rem 0rem 1rem;
+  font-size: 17px;
+  font-weight: 500;
+  outline: none;
+}
+.searchBar i {
+  font-size: 30px;
+  color: var(--button-color);
+  cursor: pointer;
+}
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--button-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--button-hover);
+}
+/* Main Content */
+.mainContent {
+  margin-top: 2rem;
+  height: 100vh;
+}
+
+.mainContent img{
+    max-width: 100%;
+    height: auto;
+}
+.mainContent .gallery{
+    margin: 0 0.6rem;
+}
+.mainContent .gallery .gallery-item{
+    height: auto;
+    margin: 0.5rem;
+    position: relative;
+}
+.mainContent .gallery .gallery-item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.1), 0px 1px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.gallerySpan{
+    font-size: 30px;
+    margin: 1.3rem;
+    font-weight: 600;
+}
+.details{
+  position: absolute;left: 10px;bottom: 10px;display: flex;align-items: center;justify-content: center;
+}
+@media (min-width: 640px){
+    .mainContent .gallery{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 300px);
+        grid-auto-flow: row dense;
+    }
+    .mainContent .gallery-item{
+        margin: 0.7rem;
+    }
+    .mainContent .gallery-item:first-child{
+        grid-row: span 1;
+    }
+    .mainContent .gallery-item:nth-child(2){
+        grid-column: 2 / 3;
+        grid-row: span 2;
+    }
+    .mainContent .gallery-item:nth-child(6),
+    .mainContent .gallery-item:nth-child(8){
+        grid-row: span 2;
+    }
+}
+@media (min-width: 960px){
+    .mainContent .gallery{
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, auto-flow);
+    }
+    .mainContent .gallery-item:first-child,
+    .mainContent .gallery-item:nth-child(7),
+    .mainContent .gallery-item:nth-child(8){
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    .mainContent .gallery-item:nth-child(2){
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+@media screen and (max-width: 550px) {
+  .header .logo {
+    font-size: 35px;
+  }
+  .header .button {
+    padding: 1rem 0.5rem 1rem 1rem;
+  }
+  .header .button span {
+    display: none;
+  }
+  .sideItems img{
+    margin-left: 0.5rem;
+}
+}
